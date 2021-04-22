@@ -1,0 +1,7 @@
+streamlit
+pdf2image
+requests
+time
+json
+pandas
+os
