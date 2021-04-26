@@ -83,7 +83,7 @@ tic = time.time()
 if img_file_buffer is not None:
     file_details = {"FileName":img_file_buffer.name,"FileType":img_file_buffer.type}
 
-    with open(os.path.join("./tempDir", img_file_buffer.name), "wb") as f:
+    with open(os.path.join("tempDir", img_file_buffer.name), "wb") as f:
         f.write(img_file_buffer.getbuffer())
     st.success("Saved File")
     st.markdown("---")
@@ -92,12 +92,11 @@ if img_file_buffer is not None:
 
     for i in range(len(pdf)):
         # Save pages as images in the pdf
-        pdf[i].save('./tempDir/'+img_file_buffer.name.split(".")[0]+ '.jpg', 'JPEG')
+        pdf[i].save('tempDir/'+img_file_buffer.name.split(".")[0]+ '.jpg', 'JPEG')
 
-    image_path = "./tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
+    image_path = "tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
     file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
-    st.text(os.listdir())
-         
+
     if st.button("Process Your Invoices"):
         # You can send the list of categories that is relevant to your case
         # Veryfi will try to choose the best one that fits this document
@@ -122,6 +121,8 @@ if img_file_buffer is not None:
                 dd[key] = value
 
         st.json(dd)
+
+
 
 
 
