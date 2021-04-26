@@ -93,14 +93,19 @@ if img_file_buffer is not None:
     st.success("Saved File")
     st.markdown("---")
     # Store Pdf with convert_from_path function
-    pdf = convert_from_path("./tempDir/"+img_file_buffer.name)
+    fn = "./tempDir/"+img_file_buffer.name
+    for fn in files:
+        os.system('convert ' +
+                  '-density 300 ' +
+                  '%s ' % fn +
+                  '-quality 100 ' +
+                  '-flatten ' +
+                  '%s' % fn.replace('.pdf', '.jpg'))
+    print("Done")
 
-    for i in range(len(pdf)):
-        # Save pages as images in the pdf
-        pdf[i].save('tempDir/'+img_file_buffer.name.split(".")[0]+ '.jpg', 'JPEG')
 
-    image_path = "tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
-    file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
+    #image_path = "tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
+    #file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
 
     if st.button("Process Your Invoices"):
         # You can send the list of categories that is relevant to your case
@@ -126,6 +131,9 @@ if img_file_buffer is not None:
                 dd[key] = value
 
         st.json(dd)
+
+
+
 
 
 
