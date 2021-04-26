@@ -96,7 +96,8 @@ if img_file_buffer is not None:
 
     image_path = "./tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
     file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
-
+    st.text(os.listdir())
+         
     if st.button("Process Your Invoices"):
         # You can send the list of categories that is relevant to your case
         # Veryfi will try to choose the best one that fits this document
