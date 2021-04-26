@@ -94,8 +94,8 @@ if img_file_buffer is not None:
     st.markdown("---")
     # Store Pdf with convert_from_path function
     fn = "./tempDir/"+img_file_buffer.name
-    for fn in files:
-        os.system('convert ' +
+    
+    os.system('convert ' +
                   '-density 300 ' +
                   '%s ' % fn +
                   '-quality 100 ' +
@@ -104,8 +104,8 @@ if img_file_buffer is not None:
     print("Done")
 
 
-    #image_path = "tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
-    #file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
+    image_path = "tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
+    file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
 
     if st.button("Process Your Invoices"):
         # You can send the list of categories that is relevant to your case
