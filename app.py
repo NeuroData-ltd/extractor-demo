@@ -7,6 +7,11 @@ import json
 import pandas as pd
 import os
 
+
+from collections import namedtuple
+import warnings
+analyzedDocument = namedtuple('AnalyzedDocument', 'words tags')
+
 items = ['abn_number', 'account_number', 'bill_to_address', 'bill_to_name', 'bill_to_vat_number', 'card_number',
          'cashback', 'category', 'currency_code', 'date', 'delivery_date', 'discount', 'document_ref',
          'due_date','img_file_name', 'img_thumbnail', 'img_url', 'insurance', 'invoice_number', 'is_duplicate',
@@ -88,11 +93,12 @@ if img_file_buffer is not None:
     st.success("Saved File")
     st.markdown("---")
     # Store Pdf with convert_from_path function
-    pdf = convert_from_path("tempDir/"+img_file_buffer.name)
-    pdf[0].save('tempDir/'+img_file_buffer.name.split(".")[0]+ '.jpg', 'JPEG')
-        
-    
-    
+    pdf = convert_from_path("./tempDir/"+img_file_buffer.name)
+
+    for i in range(len(pdf)):
+        # Save pages as images in the pdf
+        pdf[i].save('tempDir/'+img_file_buffer.name.split(".")[0]+ '.jpg', 'JPEG')
+
     image_path = "tempDir/"+img_file_buffer.name.split(".")[0]+ '.jpg'
     file_name = img_file_buffer.name.split(".")[0]+ '.jpg'
 
@@ -120,6 +126,10 @@ if img_file_buffer is not None:
                 dd[key] = value
 
         st.json(dd)
+
+
+
+
 
 
 
