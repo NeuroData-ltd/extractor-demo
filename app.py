@@ -88,7 +88,7 @@ if img_file_buffer is not None:
     st.success("Saved File")
     st.markdown("---")
     # Store Pdf with convert_from_path function
-    pdf = convert_from_path("/tempDir/"+img_file_buffer.name)
+    pdf = convert_from_path("tempDir/"+img_file_buffer.name)
     pdf[0].save('tempDir/'+img_file_buffer.name.split(".")[0]+ '.jpg', 'JPEG')
         
     
