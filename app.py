@@ -23,7 +23,7 @@ items = ['abn_number', 'account_number', 'bill_to_address', 'bill_to_name', 'bil
 CLIENT_ID = "vrf3ZPfMXtt4vzaEtCYChFXtz4GemhUoNOXY4Xt"
 ENVIRONMENT_URL = "api.veryfi.com"
 username = "yassine.hamdaoui"
-api_key = "005f364d189251026f4a514c30df16c9"
+api_key = "501237936122316437457a0df27a20e9"
 process_file_url = 'https://{0}/api/v7/partner/documents/'.format(ENVIRONMENT_URL)
 headers = {
     "Accept": "application/json",
