@@ -44,11 +44,7 @@ headers = {
     "AUTHORIZATION": "apikey {0}:{1}".format(username, api_key)
 }
 
-url = 'https://app.nanonets.com/api/v2/OCR/Model/54ead1ca-698f-4e41-92c2-7cbde54f7e3b/LabelFile/'
 
-st.set_page_config(
-    page_title="NeuroData Extractor Demo", layout="wide", page_icon="./images/logo.png"
-)
 
 st.title("NeuroData Extractor Demo")
 st.subheader("")
