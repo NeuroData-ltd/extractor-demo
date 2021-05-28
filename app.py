@@ -112,7 +112,7 @@ if img_file_buffer is not None:
             """
             val = tto_excel(df)
             b64 = base64.b64encode(val)  # val looks like b'...'
-            return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="Data.xlsx">Download Excel file</a>'
+            return f'<a href="data:application/octet-stream;base64,{b64.decode()}" download="Data.xlsx">Download file</a>'
 
 
         c = st.beta_columns(10)
