@@ -20,8 +20,7 @@ st.set_page_config(
 
 st.title("NeuroData Extractor Demo")
 st.subheader("")
-c = st.beta_columns(9)
-a = c[0].checkbox("select all")
+
 
 st.markdown("---")
 
@@ -43,17 +42,6 @@ headers = {
     "CLIENT-ID": CLIENT_ID,
     "AUTHORIZATION": "apikey {0}:{1}".format(username, api_key)
 }
-
-
-
-st.title("NeuroData Extractor Demo")
-st.subheader("")
-
-
-st.markdown("---")
-
-
-
 
 img_file_buffer = st.file_uploader("Upload Your Invoice", type=["png", "jpg", "jpeg", "pdf"])
 
